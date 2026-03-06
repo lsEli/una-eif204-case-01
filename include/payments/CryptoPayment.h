@@ -8,17 +8,16 @@
 #include "IPayment.h"
 
 namespace payments {
-
     class CryptoPayment final : public IPayment {
-        public:
+    public:
         CryptoPayment() = default;
 
         void pay(double amount) const override;
+
         [[nodiscard]] PaymentKind kind() const override;
 
         ~CryptoPayment() override = default;
     };
-
 }
 
 #endif //UNA_EIF204_CASE_01_CRYPTOPAYMENT_H

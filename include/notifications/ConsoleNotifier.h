@@ -5,8 +5,17 @@
 #ifndef UNA_EIF204_CASE_01_CONSOLENOTIFIER_H
 #define UNA_EIF204_CASE_01_CONSOLENOTIFIER_H
 
-namespace notifications {
+#include "INotifier.h"
 
+namespace notifications {
+    class ConsoleNotifier final : public INotifier {
+    public:
+        ConsoleNotifier() = default;
+
+        void notity(string_view message) override;
+
+        ~ConsoleNotifier() override = default;
+    };
 }
 
 #endif //UNA_EIF204_CASE_01_CONSOLENOTIFIER_H

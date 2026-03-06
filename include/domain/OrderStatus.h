@@ -6,14 +6,12 @@
 #define UNA_EIF204_CASE_01_ORDERSTATUS_H
 
 namespace domain {
-
     enum class OrderStatus {
         Created,
         Accepted,
         Rejected,
         Shipping
     };
-
 }
 
 #endif //UNA_EIF204_CASE_01_ORDERSTATUS_H

@@ -5,8 +5,17 @@
 #ifndef UNA_EIF204_CASE_01_INOTIFIER_H
 #define UNA_EIF204_CASE_01_INOTIFIER_H
 
-namespace notifications {
+#include <string_view>
 
+using std::string_view;
+
+namespace notifications {
+    class INotifier {
+    public:
+        virtual void notity(string_view message) = 0;
+
+        virtual ~INotifier() = default;
+    };
 }
 
 #endif //UNA_EIF204_CASE_01_INOTIFIER_H

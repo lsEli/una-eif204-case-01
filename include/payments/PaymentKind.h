@@ -6,13 +6,11 @@
 #define UNA_EIF204_CASE_01_PAYMENTKIND_H
 
 namespace payments {
-
     enum class PaymentKind {
         Card,
         Cash,
         Crypto
     };
-
 }
 
 #endif //UNA_EIF204_CASE_01_PAYMENTKIND_H

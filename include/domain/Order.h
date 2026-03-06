@@ -15,25 +15,31 @@ using std::string;
 using std::vector;
 
 namespace domain {
-
     class Order {
     public:
-        explicit Order() = default;
+        Order() = delete;
+
+        explicit Order(string id);
 
         [[nodiscard]] string_view id() const;
+
         [[nodiscard]] OrderStatus status() const;
+
         void addItem(OrderItem item);
+
         [[nodiscard]] double total() const;
+
         [[nodiscard]] size_t itemCount() const;
+
         void setStatus(OrderStatus newStatus);
 
         ~Order() = default;
+
     private:
         string id_{};
         OrderStatus status_{};
         vector<OrderItem> items_;
     };
-
 }
 
 #endif //UNA_EIF204_CASE_01_ORDER_H
