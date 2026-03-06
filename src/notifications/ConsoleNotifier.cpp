@@ -13,6 +13,7 @@ using std::format;
 
 namespace notifications {
     void ConsoleNotifier::notify(string_view message) {
+        // TODO: Implement this method correctly.
         cout << format("ConsoleNotifier: {}", message) << endl;
     }
 }
