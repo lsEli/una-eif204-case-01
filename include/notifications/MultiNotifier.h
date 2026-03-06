@@ -16,9 +16,9 @@ namespace notifications {
     public:
         MultiNotifier() = default;
 
-        void notity(string_view message) override;
+        void notify(string_view message) override;
 
-        ~MultiNotifier() = default;
+        ~MultiNotifier() override = default;
 
     private:
         vector<std::reference_wrapper<INotifier> > targets_;

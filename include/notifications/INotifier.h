@@ -12,7 +12,7 @@ using std::string_view;
 namespace notifications {
     class INotifier {
     public:
-        virtual void notity(string_view message) = 0;
+        virtual void notify(string_view message) = 0;
 
         virtual ~INotifier() = default;
     };

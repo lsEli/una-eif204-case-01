@@ -19,7 +19,7 @@ namespace notifications {
     public:
         MemoryNotifier() = default;
 
-        void notity(string_view message) override;
+        void notify(string_view message) override;
 
         ~MemoryNotifier() override = default;
     private:

@@ -12,9 +12,9 @@ using std::endl;
 using std::format;
 
 namespace notifications {
-    void MultiNotifier::notity(string_view message) {
+    void MultiNotifier::notify(string_view message) {
         for (const auto &target: this->targets_) {
-            target.get().notity(message);
+            target.get().notify(message);
         }
     }
 }

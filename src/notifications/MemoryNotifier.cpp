@@ -12,7 +12,7 @@ using std::endl;
 using std::format;
 
 namespace notifications {
-    void MemoryNotifier::notity(string_view message) {
+    void MemoryNotifier::notify(string_view message) {
         cout << format("MemoryNotifier: {}", message) << endl;
     }
 }

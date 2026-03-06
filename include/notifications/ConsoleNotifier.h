@@ -12,7 +12,7 @@ namespace notifications {
     public:
         ConsoleNotifier() = default;
 
-        void notity(string_view message) override;
+        void notify(string_view message) override;
 
         ~ConsoleNotifier() override = default;
     };
