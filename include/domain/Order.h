@@ -18,7 +18,7 @@ namespace domain {
 
     class Order {
     public:
-        Order() = default;
+        explicit Order() = default;
 
         [[nodiscard]] string_view id() const;
         [[nodiscard]] OrderStatus status() const;
