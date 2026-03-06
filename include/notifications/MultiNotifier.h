@@ -12,11 +12,11 @@
 using std::vector;
 
 namespace notifications {
-    class MultiNotifier {
+    class MultiNotifier : public INotifier {
     public:
         MultiNotifier() = default;
 
-        void notify(string_view message);
+        void notity(string_view message) override;
 
         ~MultiNotifier() = default;
 

@@ -19,13 +19,11 @@ namespace domain {
 
         [[nodiscard]] string_view name() const;
 
-        [[nodiscard]] const int quantity() const;
+        [[nodiscard]] int quantity() const;
 
-        [[nodiscard]] const double unitPrice() const;
+        [[nodiscard]] double unitPrice() const;
 
-        [[nodiscard]] const double subTotal() const;
-
-        [[nodiscard]] string &toString() const;
+        [[nodiscard]] double subTotal() const;
 
         ~OrderItem() = default;
 

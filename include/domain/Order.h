@@ -25,7 +25,7 @@ namespace domain {
 
         [[nodiscard]] OrderStatus status() const;
 
-        void addItem(OrderItem item);
+        void addItem(const OrderItem &item);
 
         [[nodiscard]] double total() const;
 
