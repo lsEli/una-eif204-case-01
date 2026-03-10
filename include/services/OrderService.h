@@ -26,15 +26,15 @@ namespace services {
 
         OrderService(INotifier &notifier, PaymentReport &report);
 
-        Order createOrder(string id);
+        [[nodiscard]] Order createOrder(string &id) const;
 
-        void addItem(Order &order, string name, int quantity, double unitPrice);
+        void addItem(Order &order, string &name, int quantity, double unitPrice) const;
 
-        void pay(Order &order, IPayment &payment);
+        void pay(Order &order, const IPayment &payment) const;
 
-        void cancel(Order &order);
+        void cancel(Order &order) const;
 
-        void ship(Order &order);
+        void ship(Order &order) const;
 
         ~OrderService() = default;
 

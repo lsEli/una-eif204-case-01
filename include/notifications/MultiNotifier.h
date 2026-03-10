@@ -12,7 +12,7 @@
 using std::vector;
 
 namespace notifications {
-    class MultiNotifier : public INotifier {
+    class MultiNotifier final : public INotifier {
     public:
         MultiNotifier() = default;
 

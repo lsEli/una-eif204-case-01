@@ -4,10 +4,8 @@
 
 #include "../../include/domain/Order.h"
 
-using std::move;
-
 namespace domain {
-    Order::Order(string id) : id_(std::move(id)) {
+    Order::Order(string &id) : id_(std::move(id)) {
     };
 
     string_view Order::id() const {

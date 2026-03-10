@@ -19,7 +19,7 @@ namespace domain {
     public:
         Order() = delete;
 
-        explicit Order(string id);
+        explicit Order(string &id);
 
         [[nodiscard]] string_view id() const;
 

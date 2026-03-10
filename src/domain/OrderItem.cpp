@@ -7,8 +7,8 @@
 using domain::OrderItem;
 
 namespace domain {
-    OrderItem::OrderItem(string_view name, int quantity, double unitPrice) : name_(name), quantity_(quantity),
-                                                                             unitPrice_(unitPrice) {
+    OrderItem::OrderItem(string &name, const int quantity, const double unitPrice) : name_(std::move(name)), quantity_(quantity),
+        unitPrice_(unitPrice) {
     }
 
     string_view OrderItem::name() const {

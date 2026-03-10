@@ -15,7 +15,7 @@ namespace domain {
     public:
         OrderItem() = delete;
 
-        OrderItem(string_view name, int quantity, double unitPrice);
+        OrderItem(string &name, int quantity, double unitPrice);
 
         [[nodiscard]] string_view name() const;
 
