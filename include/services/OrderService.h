@@ -20,27 +20,31 @@ using domain::Order;
 using payments::IPayment;
 
 namespace services {
-    class OrderService {
+    class OrderService final {
     public:
         OrderService() = delete;
 
         OrderService(INotifier &notifier, PaymentReport &report);
 
-        [[nodiscard]] Order createOrder(string &id) const noexcept;
+        void setNotifier(INotifier &notifier) noexcept;
 
-        void addItem(Order &order, string &name, int quantity, double unitPrice) const;
+        void setReport(PaymentReport &report) noexcept;
+
+        [[nodiscard]] Order createOrder(string &id) const;
+
+        void addItem(Order &order, string name, int quantity, double unitPrice) const;
 
         void pay(Order &order, const IPayment &payment) const;
 
-        void cancel(Order &order) const noexcept;
+        void cancel(Order &order) const;
 
-        void ship(Order &order) const noexcept;
+        void ship(Order &order) const;
 
         ~OrderService() = default;
 
     private:
-        INotifier &notifier_;
-        PaymentReport &report_;
+        INotifier *notifier_;
+        PaymentReport *report_;
     };
 }
 

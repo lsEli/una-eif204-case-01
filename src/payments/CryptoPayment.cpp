@@ -13,7 +13,7 @@ using std::format;
 using std::invalid_argument;
 
 namespace payments {
-    void CryptoPayment::pay(double amount) const {
+    void CryptoPayment::pay(const double amount) const {
         if (0 >= amount) {
             throw invalid_argument("Amount must be greater than zero");
         }

@@ -34,7 +34,7 @@ namespace domain {
         return this->items_.size();
     }
 
-    void Order::setStatus(OrderStatus newStatus) noexcept {
+    void Order::setStatus(const OrderStatus newStatus) noexcept {
         this->status_ = newStatus;
     }
 }

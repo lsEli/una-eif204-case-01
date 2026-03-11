@@ -11,11 +11,11 @@ using std::string;
 using std::string_view;
 
 namespace domain {
-    class OrderItem {
+    class OrderItem final {
     public:
         OrderItem() = delete;
 
-        OrderItem(string &name, int quantity, double unitPrice);
+        OrderItem(string name, int quantity, double unitPrice);
 
         [[nodiscard]] string_view name() const noexcept;
 

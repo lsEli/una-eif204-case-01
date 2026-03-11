@@ -10,12 +10,12 @@
 using std::ostream;
 
 namespace reporting {
-    void PaymentReport::recordPayment(PaymentKind kind) {
+    void PaymentReport::recordPayment(const PaymentKind kind) {
         counts_[kind]++;
     }
 
-    size_t PaymentReport::count(PaymentKind kind) const {
-        auto it = counts_.find(kind);
+    size_t PaymentReport::count(const PaymentKind kind) const {
+        const auto it = counts_.find(kind);
 
         if (it == counts_.end()) {
             return 0;

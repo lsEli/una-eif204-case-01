@@ -15,7 +15,7 @@ using std::string;
 using std::vector;
 
 namespace domain {
-    class Order {
+    class Order final {
     public:
         Order() = delete;
 

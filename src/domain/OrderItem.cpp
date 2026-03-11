@@ -7,7 +7,7 @@
 using domain::OrderItem;
 
 namespace domain {
-    OrderItem::OrderItem(string &name, const int quantity, const double unitPrice) : name_(std::move(name)), quantity_(quantity),
+    OrderItem::OrderItem(string name, const int quantity, const double unitPrice) : name_(std::move(name)), quantity_(quantity),
         unitPrice_(unitPrice) {
     }
 
