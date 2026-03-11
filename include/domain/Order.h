@@ -21,24 +21,24 @@ namespace domain {
 
         explicit Order(string &id);
 
-        [[nodiscard]] string_view id() const;
+        [[nodiscard]] string_view id() const noexcept;
 
-        [[nodiscard]] OrderStatus status() const;
+        [[nodiscard]] OrderStatus status() const noexcept;
 
         void addItem(const OrderItem &item);
 
-        [[nodiscard]] double total() const;
+        [[nodiscard]] double total() const noexcept;
 
-        [[nodiscard]] size_t itemCount() const;
+        [[nodiscard]] size_t itemCount() const noexcept;
 
-        void setStatus(OrderStatus newStatus);
+        void setStatus(OrderStatus newStatus) noexcept;
 
         ~Order() = default;
 
     private:
         string id_{};
         OrderStatus status_{};
-        vector<OrderItem> items_;
+        vector<OrderItem> items_{};
     };
 }
 

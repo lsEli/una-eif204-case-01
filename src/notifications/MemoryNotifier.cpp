@@ -13,7 +13,10 @@ using std::format;
 
 namespace notifications {
     void MemoryNotifier::notify(string_view message) {
-        // TODO: Implement this method correctly.
-        cout << format("MemoryNotifier: {}", message) << endl;
+        this->messages_.emplace_back(message);
+    }
+
+    const vector<string> &MemoryNotifier::messages() const noexcept {
+        return this->messages_;
     }
 }

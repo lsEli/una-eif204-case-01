@@ -12,7 +12,7 @@ using std::endl;
 using std::format;
 
 namespace notifications {
-    void ConsoleNotifier::notify(string_view message) {
+    void ConsoleNotifier::notify(const string_view message) noexcept {
         cout << format("ConsoleNotifier: {}", message) << endl;
     }
 }

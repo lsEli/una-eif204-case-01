@@ -14,7 +14,7 @@ namespace payments {
 
         void pay(double amount) const override;
 
-        [[nodiscard]] PaymentKind kind() const override;
+        [[nodiscard]] PaymentKind kind() const noexcept override;
 
         ~CryptoPayment() override = default;
     };

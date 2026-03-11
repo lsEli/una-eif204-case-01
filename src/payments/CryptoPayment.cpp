@@ -21,7 +21,7 @@ namespace payments {
         cout << format("CryptoPayment: {}", amount) << endl;
     }
 
-    PaymentKind CryptoPayment::kind() const {
+    PaymentKind CryptoPayment::kind() const noexcept {
         return PaymentKind::Crypto;
     }
 }

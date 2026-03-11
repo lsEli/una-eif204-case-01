@@ -17,13 +17,13 @@ namespace domain {
 
         OrderItem(string &name, int quantity, double unitPrice);
 
-        [[nodiscard]] string_view name() const;
+        [[nodiscard]] string_view name() const noexcept;
 
-        [[nodiscard]] int quantity() const;
+        [[nodiscard]] int quantity() const noexcept;
 
-        [[nodiscard]] double unitPrice() const;
+        [[nodiscard]] double unitPrice() const noexcept;
 
-        [[nodiscard]] double subTotal() const;
+        [[nodiscard]] double subTotal() const noexcept;
 
         ~OrderItem() = default;
 

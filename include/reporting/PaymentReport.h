@@ -28,7 +28,7 @@ namespace reporting {
         ~PaymentReport() = default;
 
     private:
-        unordered_map<PaymentKind, size_t> counts_;
+        unordered_map<PaymentKind, size_t> counts_{};
     };
 }
 

@@ -8,11 +8,11 @@ namespace domain {
     Order::Order(string &id) : id_(std::move(id)) {
     };
 
-    string_view Order::id() const {
+    string_view Order::id() const noexcept {
         return this->id_;
     }
 
-    OrderStatus Order::status() const {
+    OrderStatus Order::status() const noexcept {
         return this->status_;
     }
 
@@ -20,7 +20,7 @@ namespace domain {
         this->items_.push_back(item);
     }
 
-    double Order::total() const {
+    double Order::total() const noexcept {
         double total{};
 
         for (const auto &item: this->items_) {
@@ -30,11 +30,11 @@ namespace domain {
         return total;
     }
 
-    size_t Order::itemCount() const {
+    size_t Order::itemCount() const noexcept {
         return this->items_.size();
     }
 
-    void Order::setStatus(OrderStatus newStatus) {
+    void Order::setStatus(OrderStatus newStatus) noexcept {
         this->status_ = newStatus;
     }
 }

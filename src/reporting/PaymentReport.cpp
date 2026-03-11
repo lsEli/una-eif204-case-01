@@ -3,6 +3,7 @@
 //
 
 #include <ostream>
+#include <iostream>
 
 #include "../../include/reporting/PaymentReport.h"
 
@@ -10,14 +11,22 @@ using std::ostream;
 
 namespace reporting {
     void PaymentReport::recordPayment(PaymentKind kind) {
-        // TODO: Implement this method.
+        counts_[kind]++;
     }
 
     size_t PaymentReport::count(PaymentKind kind) const {
-        // TODO: Implement this method.
+        auto it = counts_.find(kind);
+
+        if (it == counts_.end()) {
+            return 0;
+        }
+
+        return it->second;
     }
 
     void PaymentReport::print(ostream &os) const {
-        // TODO: Implement this method.
+        for (const auto &[type, count]: counts_) {
+            os << type << ": " << count << "\n";
+        }
     }
 }

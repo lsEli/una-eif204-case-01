@@ -11,19 +11,19 @@ namespace domain {
         unitPrice_(unitPrice) {
     }
 
-    string_view OrderItem::name() const {
+    string_view OrderItem::name() const noexcept {
         return this->name_;
     }
 
-    int OrderItem::quantity() const {
+    int OrderItem::quantity() const noexcept {
         return this->quantity_;
     }
 
-    double OrderItem::unitPrice() const {
+    double OrderItem::unitPrice() const noexcept {
         return this->unitPrice_;
     }
 
-    double OrderItem::subTotal() const {
+    double OrderItem::subTotal() const noexcept {
         return this->unitPrice() * this->quantity();
     }
 }

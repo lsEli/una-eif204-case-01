@@ -12,7 +12,7 @@ namespace payments {
     public:
         virtual void pay(double amount) const = 0;
 
-        [[nodiscard]] virtual PaymentKind kind() const = 0;
+        [[nodiscard]] virtual PaymentKind kind() const noexcept = 0;
 
         virtual ~IPayment() = default;
     };

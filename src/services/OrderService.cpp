@@ -17,7 +17,7 @@ namespace services {
     OrderService::OrderService(INotifier &notifier, PaymentReport &report) : notifier_(notifier), report_(report) {
     }
 
-    Order OrderService::createOrder(string &id) const {
+    Order OrderService::createOrder(string &id) const noexcept {
         return Order{id};
     }
 
@@ -35,11 +35,11 @@ namespace services {
         }
     }
 
-    void OrderService::cancel(Order &order) const {
+    void OrderService::cancel(Order &order) const noexcept {
         order.setStatus(OrderStatus::Rejected);
     }
 
-    void OrderService::ship(Order &order) const {
+    void OrderService::ship(Order &order) const noexcept {
         order.setStatus(OrderStatus::Shipping);
     }
 }

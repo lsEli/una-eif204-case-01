@@ -21,7 +21,7 @@ namespace payments {
         cout << format("CashPayment: {}", amount) << endl;
     }
 
-    PaymentKind CashPayment::kind() const {
+    PaymentKind CashPayment::kind() const noexcept {
         return PaymentKind::Cash;
     }
 }

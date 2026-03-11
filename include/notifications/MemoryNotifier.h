@@ -21,9 +21,11 @@ namespace notifications {
 
         void notify(string_view message) override;
 
+        [[nodiscard]] const vector<string> &messages() const noexcept;
+
         ~MemoryNotifier() override = default;
     private:
-        vector<string> messages_;
+        vector<string> messages_{};
     };
 
 }
